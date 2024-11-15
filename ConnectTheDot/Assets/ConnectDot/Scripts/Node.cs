@@ -24,6 +24,7 @@ namespace Connect.Core
             {
                 if (_point.activeSelf)
                 {
+                    Debug.Log("Point count " + ConnectedNodes.Count);
                     return ConnectedNodes.Count == 1;
                 }
 
@@ -331,6 +332,7 @@ namespace Connect.Core
                     }
                 }
             }
+            Debug.Log("Solve Highlight");
 
             // Collect all end nodes within the connected nodes
             List<Node> endNodes = new List<Node>();

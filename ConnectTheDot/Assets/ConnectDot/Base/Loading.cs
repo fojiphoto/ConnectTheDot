@@ -29,7 +29,7 @@ public class Loading : MonoBehaviour
             OnLoadingUpdate?.Invoke();
         }).OnComplete(() =>
         {
-            SceneManager.LoadScene("MainMenu");
+            SceneManager.LoadScene("MainMenuDotConnect");
         });
 
 

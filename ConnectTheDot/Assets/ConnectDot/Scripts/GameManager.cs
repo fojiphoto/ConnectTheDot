@@ -121,8 +121,8 @@ namespace Connect.Core
 
         #region SCENE_LOAD
 
-        private const string MainMenu = "MainMenu";
-        private const string Gameplay = "Gameplay";
+        private const string MainMenu = "MainMenuDotConnect";
+        private const string Gameplay = "GameplayDotConnect";
 
         public void GoToMainMenu()
         {

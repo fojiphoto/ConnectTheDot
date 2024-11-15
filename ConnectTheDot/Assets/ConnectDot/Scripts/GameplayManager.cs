@@ -239,6 +239,7 @@ namespace Connect.Core
 
 
                     startNode.UpdateInput(tempNode);
+                   
                     CheckWin();
                     startNode = null;
 
@@ -281,8 +282,10 @@ namespace Connect.Core
             foreach (var item in _nodes)
             {
                 IsWinning &= item.IsWin;
+                Debug.Log("Is winiing "+IsWinning);
                 if (!IsWinning)
                 {
+                   
                     return;
                 }
             }
@@ -293,6 +296,7 @@ namespace Connect.Core
             Observe.OnWin?.Invoke();
             _clickHighlight.gameObject.SetActive(false);
             hasGameFinished = true;
+            Debug.Log("Win Game ");
         }
 
         #endregion
