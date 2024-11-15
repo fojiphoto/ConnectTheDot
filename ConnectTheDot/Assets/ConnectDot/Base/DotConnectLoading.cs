@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
 using System;
-public class Loading : MonoBehaviour
+public class DotConnectLoading : MonoBehaviour
 {
     public Image LoadingFill_UI;
     public float TimeDuration;

@@ -3,31 +3,31 @@ using System.Collections.Generic;
 using UnityEngine;
 public class GameMonobehavior : MonoBehaviour
 {
-    private AudioController _audioController;
-    private UIManager _uiManager;
+    private DotConnectAudioController _audioController;
+    private DotConnectUIManager _uiManager;
   
 
 
 
-    public AudioController Ac
+    public DotConnectAudioController Ac
     {
         get
         {
             if (_audioController == null)
             {
-                _audioController = AudioController.Instance;
+                _audioController = DotConnectAudioController.Instance;
             }
             return _audioController;
         }
     }
 
-    public UIManager Um
+    public DotConnectUIManager Um
     {
         get
         {
             if (_uiManager == null)
             {
-                _uiManager = UIManager.Instance;
+                _uiManager = DotConnectUIManager.Instance;
             }
             return _uiManager;
         }

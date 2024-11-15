@@ -37,7 +37,7 @@ namespace Connect.Core
             string[] parts = gameObjectName.Split('_');
             _levelText.text = parts[parts.Length - 1];
             currentLevel = int.Parse(_levelText.text);
-            isLevelUnlocked = GameManager.Instance.IsLevelUnlocked(currentLevel);
+            isLevelUnlocked = DotConnectGameManager.Instance.IsLevelUnlocked(currentLevel);
 
             _image.color = isLevelUnlocked ? MainMenuManager.Instance.CurrentColor : _inactiveColor;
         }
@@ -48,15 +48,15 @@ namespace Connect.Core
         {
             if (!isLevelUnlocked)
             {
-                AudioController.Instance.PlaySound(AudioController.Instance.cantclick);
+                DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.cantclick);
                
                 StartCoroutine(ActiveText());
                 return;
             }
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
-            GameManager.Instance.CurrentLevel = currentLevel;
-            GameManager.Instance.GoToGameplay();
+            DotConnectGameManager.Instance.CurrentLevel = currentLevel;
+            DotConnectGameManager.Instance.GoToGameplay();
 
 
         }

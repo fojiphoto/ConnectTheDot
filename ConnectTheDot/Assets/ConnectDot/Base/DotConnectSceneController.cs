@@ -5,9 +5,9 @@ using DG.Tweening;
 using UnityEngine.SceneManagement;
 using Unity.VisualScripting;
 
-public class SceneController : MonoBehaviour
+public class DotConnectSceneController : MonoBehaviour
 {
-    public static SceneController Instance;
+    public static DotConnectSceneController Instance;
     //public CanvasGroup transition;
 
     private void Awake()

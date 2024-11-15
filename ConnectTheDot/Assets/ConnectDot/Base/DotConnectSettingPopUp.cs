@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
 
-public class SettingPopUp : GameMonobehavior
+public class DotConnectSettingPopUp : GameMonobehavior
 {
     [Header("Space between menu item")]
     [SerializeField] Vector2 _spacing;
@@ -37,7 +37,7 @@ public class SettingPopUp : GameMonobehavior
     bool _cantClick = false;
 
     Button _mainButton;
-    SettingPopUpItem[] menuItem;
+    DotConnectSettingPopUpItem[] menuItem;
     bool _isExpanded = false;
 
     Vector2 _mainButtonPosition;
@@ -55,10 +55,10 @@ public class SettingPopUp : GameMonobehavior
     private void Start()
     {
         _itemCount = transform.childCount - 1;
-        menuItem = new SettingPopUpItem[_itemCount];
+        menuItem = new DotConnectSettingPopUpItem[_itemCount];
         for (int i = 0; i < _itemCount; i++)
         {
-            menuItem[i] = transform.GetChild(i + 1).GetComponent<SettingPopUpItem>();
+            menuItem[i] = transform.GetChild(i + 1).GetComponent<DotConnectSettingPopUpItem>();
         }
         _mainButton = transform.GetChild(0).GetComponent<Button>();
 

@@ -32,9 +32,9 @@ namespace Connect.Core
             hasGameFinished = false;
             _winPopUP.SetActive(false);
             _titleText.gameObject.SetActive(true);
-            _titleText.text = "LEVEL " + GameManager.Instance.CurrentLevel.ToString();
+            _titleText.text = "LEVEL " + DotConnectGameManager.Instance.CurrentLevel.ToString();
            // AdManager.instance.ShowBanner();
-            CurrentLevelData = GameManager.Instance.GetLevel();
+            CurrentLevelData = DotConnectGameManager.Instance.GetLevel();
 
             SpawnBoard();
 
@@ -59,7 +59,7 @@ namespace Connect.Core
         {
 
 
-            StartCoroutine(UIManager.Instance.ShowWinPopup());
+            StartCoroutine(DotConnectUIManager.Instance.ShowWinPopup());
 
         }
 
@@ -71,7 +71,7 @@ namespace Connect.Core
 
         private void SpawnBoard()
         {
-            int currentLevelSize = GameManager.Instance.CurrentStage + 4;
+            int currentLevelSize = DotConnectGameManager.Instance.CurrentStage + 4;
 
             var board = Instantiate(_boardPrefab,
                 new Vector3(currentLevelSize / 2f, currentLevelSize / 2f, 0f),
@@ -110,7 +110,7 @@ namespace Connect.Core
             _nodes = new List<Node>();
             _nodeGrid = new Dictionary<Vector2Int, Node>();
 
-            int currentLevelSize = GameManager.Instance.CurrentStage + 4;
+            int currentLevelSize = DotConnectGameManager.Instance.CurrentStage + 4;
             Node spawnedNode;
             Vector3 spawnPos;
 
@@ -196,7 +196,7 @@ namespace Connect.Core
             /*if (isPause) return;*/
             if (Input.GetMouseButtonDown(0))
             {
-                AudioController.Instance.PlaySound(AudioController.Instance.tapDot);
+                DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.tapDot);
                 startNode = null;
                 return;
             }
@@ -292,7 +292,7 @@ namespace Connect.Core
 
 
 
-            GameManager.Instance.UnlockLevel();
+            DotConnectGameManager.Instance.UnlockLevel();
             Observe.OnWin?.Invoke();
             _clickHighlight.gameObject.SetActive(false);
             hasGameFinished = true;
@@ -305,26 +305,26 @@ namespace Connect.Core
 
         public void ClickedBack()
         {
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
 
             //AudioController.Instance.PlayBackgroundMusic();
-            GameManager.Instance.GoToMainMenu();
+            DotConnectGameManager.Instance.GoToMainMenu();
         }
 
         public void NextLevelClick()
         {
-            GameManager.Instance.UnlockLevel();
+            DotConnectGameManager.Instance.UnlockLevel();
             // Load the next level
-            string levelName = "Level" + GameManager.Instance.CurrentStage.ToString() + GameManager.Instance.CurrentLevel.ToString();
-            GameManager.Instance.GoToGameplay();
+            string levelName = "Level" + DotConnectGameManager.Instance.CurrentStage.ToString() + DotConnectGameManager.Instance.CurrentLevel.ToString();
+            DotConnectGameManager.Instance.GoToGameplay();
 
         }
         public void NextLevelReward()
         {
             if (Application.internetReachability == NetworkReachability.NotReachable)
             {
-                UIManager.Instance.ShowNoInternetPopUp();
+                DotConnectUIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
            // Nadeem Ads DotConnect
@@ -345,11 +345,11 @@ namespace Connect.Core
 
         public void ClickedReload()
         {
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
 
 
-            GameManager.Instance.GoToGameplay();
+            DotConnectGameManager.Instance.GoToGameplay();
         }
         public float interAdsTime = 120f;
         private const string TimerKeyWin = "InterAdsTimer";
@@ -371,8 +371,8 @@ namespace Connect.Core
         public void ClickedNextLevel()
         {
             if (!hasGameFinished) return;
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
-            GameManager.Instance.GoToGameplay();
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
+            DotConnectGameManager.Instance.GoToGameplay();
         }
 
         public void ClickedNextLevelInter()

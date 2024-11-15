@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SettingPopUpItem : MonoBehaviour
+public class DotConnectSettingPopUpItem : MonoBehaviour
 {
     [HideInInspector] public Image img;
     [HideInInspector] public Transform trans;
-    SettingPopUp _settingsPopUp;
+    DotConnectSettingPopUp _settingsPopUp;
     Button button;
     int _index;
     private void Awake()
@@ -15,7 +15,7 @@ public class SettingPopUpItem : MonoBehaviour
         img = GetComponent<Image>();
         trans = transform;
 
-        _settingsPopUp = trans.parent.GetComponent<SettingPopUp>();
+        _settingsPopUp = trans.parent.GetComponent<DotConnectSettingPopUp>();
         _index = trans.GetSiblingIndex() - 1;
 
         button = GetComponent<Button>();
@@ -26,7 +26,7 @@ public class SettingPopUpItem : MonoBehaviour
     void OnItemClick()
     {
         _settingsPopUp.OnItemClick(_index);
-        AudioController.Instance.PlaySound(AudioController.Instance.click);
+        DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
     }
 
     private void OnDestroy()

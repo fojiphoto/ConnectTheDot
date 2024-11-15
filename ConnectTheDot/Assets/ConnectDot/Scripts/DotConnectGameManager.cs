@@ -6,11 +6,11 @@ using UnityEngine.SceneManagement;
 
 namespace Connect.Core
 {
-    public class GameManager : MonoBehaviour
+    public class DotConnectGameManager : MonoBehaviour
     {
         #region START_METHODS
 
-        public static GameManager Instance;
+        public static DotConnectGameManager Instance;
 
         private void Awake()
         {

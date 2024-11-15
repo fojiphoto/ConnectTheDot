@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
-public class AudioController : GameMonobehavior
+public class DotConnectAudioController : GameMonobehavior
 {
-    public static AudioController Instance;
+    public static DotConnectAudioController Instance;
 
     [Header("Main Settings:")]
     [Range(0, 1)]

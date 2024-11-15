@@ -12,7 +12,7 @@ public class PausePopUp : GameMonobehavior
 
         Ac.PlaySound(Ac.click);
         /*Um.ToggleImg(false);*/
-        GameManager.Instance.GoToMainMenu();
+        DotConnectGameManager.Instance.GoToMainMenu();
         
 
         //GameplayManager.Instance.isPause = false;

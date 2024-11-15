@@ -25,14 +25,14 @@ namespace Connect.Core
 
         public void ClickedPlay()
         {
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
             _titlePanel.SetActive(false);
             _stagePanel.SetActive(true);
         }
 
         public void ClickedBackToTitle()
         {
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
             _titlePanel.SetActive(true);
             _stagePanel.SetActive(false);
@@ -40,7 +40,7 @@ namespace Connect.Core
 
         public void ClickedBackToStage()
         {
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
             _stagePanel.SetActive(true);
             _levelPanel.SetActive(false);
         }
@@ -59,7 +59,7 @@ namespace Connect.Core
 
         public void ClickedStage(string stageName, Color stageColor)
         {
-            AudioController.Instance.PlaySound(AudioController.Instance.click);
+            DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
             _stagePanel.SetActive(false);
             _levelPanel.SetActive(true);

@@ -17,8 +17,8 @@ namespace Connect.Core
 
         private void ClickedButton()
         {
-            GameManager.Instance.CurrentStage = _stageNumber;
-            GameManager.Instance.StageName = _stageName;
+            DotConnectGameManager.Instance.CurrentStage = _stageNumber;
+            DotConnectGameManager.Instance.StageName = _stageName;
             MainMenuManager.Instance.ClickedStage(_stageName, _stageColor);
         }
 

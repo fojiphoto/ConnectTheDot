@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class UIManager : GameMonobehavior
+public class DotConnectUIManager : GameMonobehavior
 {
     //popup
     
@@ -17,7 +17,7 @@ public class UIManager : GameMonobehavior
 
   
 
-    public static UIManager Instance;
+    public static DotConnectUIManager Instance;
 
     private void Awake()
     {

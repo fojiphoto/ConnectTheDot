@@ -354,7 +354,7 @@ namespace Connect.Core
                 // Check if the connection is newly formed or a previous connection
                 if (_lastHighlightedNode == null || !_lastHighlightedNode.Equals(endNodes[1]))
                 {
-                    AudioController.Instance.PlaySound(AudioController.Instance.drawing);
+                    DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.drawing);
                 }
 
                 // Update the last highlighted node
