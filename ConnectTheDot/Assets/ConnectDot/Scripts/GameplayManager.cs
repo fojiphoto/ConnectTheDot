@@ -33,7 +33,7 @@ namespace Connect.Core
             _winPopUP.SetActive(false);
             _titleText.gameObject.SetActive(true);
             _titleText.text = "LEVEL " + GameManager.Instance.CurrentLevel.ToString();
-            AdManager.instance.ShowBanner();
+           // AdManager.instance.ShowBanner();
             CurrentLevelData = GameManager.Instance.GetLevel();
 
             SpawnBoard();
@@ -323,14 +323,17 @@ namespace Connect.Core
                 UIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
-            AdManager.instance.ShowReward(() =>
-            {
-                NextLevelClick();
+           // Nadeem Ads DotConnect
+            //AdManager.instance.ShowReward(() =>
+            //{
+            //    NextLevelClick();
 
-            }, () =>
-            {
+            //}, () =>
+            //{
 
-            }, "YourPlacementID");
+            //}, "YourPlacementID");
+
+            NextLevelClick();
         }
 
 
@@ -370,46 +373,53 @@ namespace Connect.Core
 
         public void ClickedNextLevelInter()
         {
-            if (interAdsTime <= 0)
-            {
-                AdManager.instance.ShowInter(() =>
-                {
-                    ResetTimer();
-                    ClickedNextLevel();
-                },
-                () =>
-                {
-                    ResetTimer();
-                    ClickedNextLevel();
-                }, "Null");
-            }
-            else
-            {
-                ClickedNextLevel();
 
-            }
+            ResetTimer();
+            ClickedNextLevel();
+
+            // Nadeem Ads DotConnect
+            //if (interAdsTime <= 0)
+            //{
+            //    AdManager.instance.ShowInter(() =>
+            //    {
+            //        ResetTimer();
+            //        ClickedNextLevel();
+            //    },
+            //    () =>
+            //    {
+            //        ResetTimer();
+            //        ClickedNextLevel();
+            //    }, "Null");
+            //}
+            //else
+            //{
+            //    ClickedNextLevel();
+
+            //}
         }
 
         public void ClickedBackMenuInter()
         {
-            if (interAdsTime <= 0)
-            {
-                AdManager.instance.ShowInter(() =>
-                {
-                    ResetTimer();
-                    ClickedBack();
-                },
-                () =>
-                {
-                    ResetTimer();
-                    ClickedBack();
-                }, "Null");
-            }
-            else
-            {
-                ClickedBack();
+            ClickedBack();
+            // Nadeem Ads DotConnect
+            //if (interAdsTime <= 0)
+            //{
+            //    AdManager.instance.ShowInter(() =>
+            //    {
+            //        ResetTimer();
+            //        ClickedBack();
+            //    },
+            //    () =>
+            //    {
+            //        ResetTimer();
+            //        ClickedBack();
+            //    }, "Null");
+            //}
+            //else
+            //{
+            //    ClickedBack();
 
-            }
+            //}
         }
 
         #endregion
