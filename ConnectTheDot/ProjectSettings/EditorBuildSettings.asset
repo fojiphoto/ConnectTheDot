@@ -7,11 +7,11 @@ EditorBuildSettings:
   m_Scenes:
   - enabled: 1
     path: Assets/ConnectDot/Scenes/LoadingDotConnect.unity
-    guid: b58f7974440e83e4495527f083490eb4
+    guid: b58f7974040e83e4495527f083490eb4
   - enabled: 1
     path: Assets/ConnectDot/Scenes/MainMenuDotConnect.unity
-    guid: 64e38dc3a3e96974eb55567e4ac2ce6c
+    guid: 64e38dc3a3e96074eb55567e4ac2ce6c
   - enabled: 1
     path: Assets/ConnectDot/Scenes/GameplayDotConnect.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    guid: 2cda990e2403bbf4892e6590ba056729
   m_configObjects: {}
