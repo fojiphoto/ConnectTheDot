@@ -327,7 +327,8 @@ namespace Connect.Core
                 DotConnectUIManager.Instance.ShowNoInternetPopUp();
                 return;
             }
-           // Nadeem Ads DotConnect
+            ForSpecialInterstial.InerstitialcheckAction.Invoke();
+            // Nadeem Ads DotConnect
             //AdManager.instance.ShowReward(() =>
             //{
             //    NextLevelClick();
@@ -377,7 +378,7 @@ namespace Connect.Core
 
         public void ClickedNextLevelInter()
         {
-
+            ForSpecialInterstial.InerstitialcheckAction.Invoke();
             ResetTimer();
             ClickedNextLevel();
 
@@ -404,6 +405,7 @@ namespace Connect.Core
 
         public void ClickedBackMenuInter()
         {
+            ForSpecialInterstial.InerstitialcheckAction.Invoke();
             ClickedBack();
             // Nadeem Ads DotConnect
             //if (interAdsTime <= 0)
@@ -428,4 +430,11 @@ namespace Connect.Core
 
         #endregion
     }
+}
+
+public static class ForSpecialInterstial
+{
+    public static Action InerstitialcheckAction;
+    public static Action BannercheckAction;
+
 }

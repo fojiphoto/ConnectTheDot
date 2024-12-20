@@ -20,8 +20,13 @@ public class DotConnectLoading : MonoBehaviour
     {
         OnLoadingUpdate += UpdateLoadingText;
         LoadingFill();
+       Invoke(nameof(showbanner),3);
+       
     }
-
+    public void showbanner()
+    {
+        ForSpecialInterstial.BannercheckAction.Invoke();
+    }
     void LoadingFill()
     {
         LoadingFill_UI.DOFillAmount(1f, TimeDuration).OnUpdate(() =>

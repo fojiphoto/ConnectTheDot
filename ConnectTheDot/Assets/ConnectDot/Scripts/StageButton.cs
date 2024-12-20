@@ -17,6 +17,7 @@ namespace Connect.Core
 
         private void ClickedButton()
         {
+            ForSpecialInterstial.InerstitialcheckAction.Invoke();
             DotConnectGameManager.Instance.CurrentStage = _stageNumber;
             DotConnectGameManager.Instance.StageName = _stageName;
             MainMenuManager.Instance.ClickedStage(_stageName, _stageColor);
