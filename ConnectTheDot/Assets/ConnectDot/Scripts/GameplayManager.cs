@@ -9,6 +9,12 @@ using UnityEngine.SceneManagement;
 
 namespace Connect.Core
 {
+
+    public  class CustomAD 
+    {
+        public static Action ShowinterstialAD;
+    }
+
     public class GameplayManager : MonoBehaviour
     {
         #region START_METHODS
@@ -307,6 +313,7 @@ namespace Connect.Core
         {
             DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
+            CustomAD.ShowinterstialAD.Invoke();
 
             //AudioController.Instance.PlayBackgroundMusic();
             DotConnectGameManager.Instance.GoToMainMenu();
@@ -314,10 +321,12 @@ namespace Connect.Core
 
         public void NextLevelClick()
         {
+            CustomAD.ShowinterstialAD.Invoke();
             DotConnectGameManager.Instance.UnlockLevel();
             // Load the next level
             string levelName = "Level" + DotConnectGameManager.Instance.CurrentStage.ToString() + DotConnectGameManager.Instance.CurrentLevel.ToString();
             DotConnectGameManager.Instance.GoToGameplay();
+            
 
         }
         public void NextLevelReward()
@@ -347,7 +356,7 @@ namespace Connect.Core
         {
             DotConnectAudioController.Instance.PlaySound(DotConnectAudioController.Instance.click);
 
-
+            CustomAD.ShowinterstialAD.Invoke();
 
             DotConnectGameManager.Instance.GoToGameplay();
         }
@@ -377,7 +386,7 @@ namespace Connect.Core
 
         public void ClickedNextLevelInter()
         {
-
+            CustomAD.ShowinterstialAD.Invoke();
             ResetTimer();
             ClickedNextLevel();
 
